@@ -1,0 +1,100 @@
+{
+  "results": [
+    {
+      "name": "bene",
+      "overflow": false
+    },
+    {
+      "name": "calyco",
+      "overflow": false
+    },
+    {
+      "name": "gigacore",
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "missing": [
+    {
+      "url": "http://localhost:3102/_next/image?url=%2Fpatnership%2FIndustrial%2520%26%2520Offtake%2520Partners.jpg&w=750&q=75",
+      "status": 400
+    },
+    {
+      "url": "http://localhost:3102/_next/image?url=%2Fpatnership%2FPublic-Sector%2520%26%2520PSU%2520Collaboration.jpg&w=750&q=75",
+      "status": 400
+    }
+  ],
+  "routes": [
+    {
+      "port": 3101,
+      "route": "/about",
+      "status": 200
+    },
+    {
+      "port": 3101,
+      "route": "/ai-design",
+      "status": 200
+    },
+    {
+      "port": 3101,
+      "route": "/design",
+      "status": 200
+    },
+    {
+      "port": 3101,
+      "route": "/feature-showcase",
+      "status": 200
+    },
+    {
+      "port": 3101,
+      "route": "/style-quiz",
+      "status": 200
+    },
+    {
+      "port": 3102,
+      "route": "/applications",
+      "status": 200
+    },
+    {
+      "port": 3102,
+      "route": "/company",
+      "status": 200
+    },
+    {
+      "port": 3102,
+      "route": "/company/blog",
+      "status": 200
+    },
+    {
+      "port": 3102,
+      "route": "/company/team",
+      "status": 200
+    },
+    {
+      "port": 3102,
+      "route": "/contact",
+      "status": 200
+    },
+    {
+      "port": 3102,
+      "route": "/economics",
+      "status": 200
+    },
+    {
+      "port": 3102,
+      "route": "/market",
+      "status": 200
+    },
+    {
+      "port": 3102,
+      "route": "/partnership",
+      "status": 200
+    },
+    {
+      "port": 3102,
+      "route": "/technology",
+      "status": 200
+    }
+  ],
+  "divisionRoundTrip": true
+}

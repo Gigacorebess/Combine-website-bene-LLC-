@@ -1,0 +1,52 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p app components public)",
+      "Read(//c/c/Users/av074/Downloads/**)",
+      "Bash(cd \"/c/Users/av074/Downloads/calyco interior\" && mv assets public/assets && ls -la public/assets)",
+      "Bash(npm install *)",
+      "Bash(npm view *)",
+      "Bash(npm audit *)",
+      "Bash(curl -s -o response.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/assets/logo/calyco-logo.png)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(perl -i -pe \"s/'Cormorant Garamond',Georgia,serif/'Inter',sans-serif/g; s/fontWeight: 300/fontWeight: 700/g; s/fontWeight: 400/fontWeight: 700/g;\" app/page.tsx)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npx --yes playwright install chromium --with-deps)",
+      "Bash(npx --yes playwright install chromium)",
+      "Bash(node .scratch-scroll-audit.mjs)",
+      "Bash(node -e ' *)",
+      "Bash(node .scratch-screens-capture.mjs)",
+      "Bash(pkill -f \"next-router-worker\\\\|next dev\\\\|node.*next\")",
+      "Bash(netstat -ano)",
+      "Bash(awk '{print $5}')",
+      "Bash(xargs -r -I{} taskkill //F //PID {})",
+      "Bash(npm uninstall *)",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"3d carousel coverflow rotation animation\" --domain ux -n 6)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"3d carousel coverflow rotation animation transform performance\" --domain ux -n 6)",
+      "Bash(cat /tmp/prod-server.log 2>&1 | tail -30)",
+      "Read(//tmp/**)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Process -Name node -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(\"cleared\")",
+      "PowerShell(\"stopped\")",
+      "Bash(cp \"C:\\\\Users\\\\av074\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-av074-Downloads-Calycointeriors\\\\73e6b218-9372-4290-a03d-35962ee3be81\\\\scratchpad\\\\check-header.js\" ./tmp-check-header.js)",
+      "Bash(node tmp-check-header.js)",
+      "Bash(cp \"C:\\\\Users\\\\av074\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-av074-Downloads-Calycointeriors\\\\73e6b218-9372-4290-a03d-35962ee3be81\\\\scratchpad\\\\check-modal.js\" ./tmp-check-modal.js)",
+      "Bash(node tmp-check-modal.js)",
+      "Bash(xargs grep -liE \"nodemailer|resend|smtp|sendmail|mailto|EMAIL_\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ ; tail -40 /tmp/dev.log)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3001/)",
+      "Bash(curl -s -X POST http://localhost:3001/api/contact -H \"Content-Type: application/json\" -d '{\"type\":\"consultation\",\"phone\":\"9999999999\",\"email\":\"a@b.com\",\"city\":\"Delhi\"}')",
+      "Bash(rm -f app/api/contact/route.ts lib/mailer.ts .env.example)",
+      "Bash(rmdir app/api/contact)",
+      "Bash(curl -s -X POST https://api.web3forms.com/submit -H \"Content-Type: application/json\" -H \"Accept: application/json\" -d '{\"access_key\":\"52da37be-e058-4a07-92c1-a07f95c25f6b\",\"to\":\"calycopaints@gmail.com\",\"subject\":\"Test - Calyco Interiors wiring check\",\"from_name\":\"Calyco Interiors - Test\",\"message\":\"This is a test message confirming the Calyco Interiors site forms are wired to Web3Forms correctly.\"}')",
+      "Bash(node -e \"try{require.resolve\\('playwright'\\);console.log\\('playwright found'\\)}catch\\(e\\){console.log\\('no playwright'\\)}\")",
+      "Bash(node -e \"try{require.resolve\\('puppeteer'\\);console.log\\('puppeteer found'\\)}catch\\(e\\){console.log\\('no puppeteer'\\)}\")"
+    ],
+    "additionalDirectories": [
+      "c:\\c\\Users\\av074\\Downloads\\calyco interior"
+    ]
+  }
+}

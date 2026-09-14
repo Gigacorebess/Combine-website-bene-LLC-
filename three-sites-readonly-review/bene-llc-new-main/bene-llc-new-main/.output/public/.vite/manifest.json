@@ -1,0 +1,75 @@
+{
+  "_framework-BCvMtQzT.js": {
+    "file": "_next/static/chunks/framework-BCvMtQzT.js",
+    "name": "framework",
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js"
+    ]
+  },
+  "_rolldown-runtime-C60lm6uB.js": {
+    "file": "_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+    "name": "rolldown-runtime"
+  },
+  "_vinext-CWYmv_8E.js": {
+    "file": "_next/static/chunks/vinext-CWYmv_8E.js",
+    "name": "vinext",
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-BCvMtQzT.js"
+    ],
+    "dynamicImports": [
+      "_vinext-CWYmv_8E.js"
+    ]
+  },
+  "app/site.tsx": {
+    "file": "_next/static/chunks/site-BFaQG8XL.js",
+    "name": "site",
+    "src": "app/site.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-BCvMtQzT.js"
+    ],
+    "css": [
+      "_next/static/css/site.C2GW0Niw.css"
+    ]
+  },
+  "components/DivisionSwitcher.tsx": {
+    "file": "_next/static/chunks/DivisionSwitcher-CCg5MBVb.js",
+    "name": "DivisionSwitcher",
+    "src": "components/DivisionSwitcher.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-BCvMtQzT.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "_next/static/chunks/layout-segment-context-Bkbc_SBT.js",
+    "name": "layout-segment-context",
+    "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_vinext-CWYmv_8E.js",
+      "_framework-BCvMtQzT.js"
+    ]
+  },
+  "virtual:vinext-app-browser-entry": {
+    "file": "_next/static/chunks/index-Dbcz4A0L.js",
+    "name": "index",
+    "src": "virtual:vinext-app-browser-entry",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_vinext-CWYmv_8E.js",
+      "_framework-BCvMtQzT.js"
+    ],
+    "dynamicImports": [
+      "_vinext-CWYmv_8E.js",
+      "node_modules/vinext/dist/shims/layout-segment-context.js",
+      "components/DivisionSwitcher.tsx",
+      "app/site.tsx"
+    ]
+  }
+}

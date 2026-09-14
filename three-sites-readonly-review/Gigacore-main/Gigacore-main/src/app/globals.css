@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for fixed navbar */
+}
+
+/* Bloom-Level Strict Color System */
+:root {
+  /* 70% White, 20% Dark Green, 10% Accent */
+
+  /* Backgrounds */
+  --bg-white: #FFFFFF;
+  --bg-dark: #001F1B;
+  /* Deep Forest Green */
+  --bg-light: #F8F9FA;
+  /* Industrial Light Gray */
+
+  /* Text */
+  --text-primary: #001F1B;
+  /* Dark Green (Almost Black) */
+  --text-secondary: #4A5568;
+  /* Cool Gray */
+  --text-inverse: #FFFFFF;
+
+  /* Accents */
+  --accent-green: #00D563;
+  /* Bloom Green */
+  --accent-hover: #00B353;
+
+  /* Strict Spacing System */
+  --spacing-section: clamp(16px, 2vw, 32px);
+  /* Fixed section spacing */
+  --spacing-element: 24px;
+  /* Fixed element spacing */
+
+  /* Typography - Bloom Standard */
+  /* Hero: Large but controlled (64px max), Mobile readable (40px) */
+  --font-hero: clamp(40px, 5vw, 64px);
+
+  /* H1/H2: Section headers (48px max) */
+  --font-h1: clamp(32px, 4vw, 48px);
+  --font-h2: clamp(28px, 3vw, 42px);
+
+  /* Sub-headers */
+  --font-h3: clamp(24px, 2vw, 32px);
+
+  /* Body: Highly readable, larger standard (20px base, 18px mobile) */
+  --font-body: clamp(18px, 2vw, 20px);
+
+  /* Intro Text: Large lead paragraphs (24px) */
+  --font-intro: clamp(20px, 2.5vw, 24px);
+}
+
+body {
+  @apply bg-white font-sans;
+  font-size: var(--font-body);
+  line-height: 1.5;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings - Authority Style */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--font-h1);
+}
+
+h2 {
+  font-size: var(--font-h2);
+}
+
+h3 {
+  font-size: var(--font-h3);
+}
+
+/* Utilities */
+@layer utilities {
+  .text-bloom-green {
+    color: var(--accent-green);
+  }
+
+  .bg-bloom-dark {
+    background-color: var(--bg-dark);
+  }
+
+  .border-bloom-green {
+    border-color: var(--accent-green);
+  }
+
+  @keyframes wave-scroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-wave {
+    animation: wave-scroll 12s linear infinite;
+  }
+
+  .mask-gradient-x {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+}
