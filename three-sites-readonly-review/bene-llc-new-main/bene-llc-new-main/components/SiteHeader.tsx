@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { descriptorFor, divisions } from '@/lib/divisions';
+import './SiteHeader.css';
 
 type Link = { href: string; label: string };
 
