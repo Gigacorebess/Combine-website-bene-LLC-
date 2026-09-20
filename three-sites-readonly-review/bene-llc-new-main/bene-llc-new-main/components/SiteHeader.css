@@ -1,0 +1,134 @@
+/* Always-visible division links beside the current descriptor. */
+.nav .brand-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  min-width: 0;
+}
+
+.nav .brand-wrap > .brand {
+  flex-shrink: 0;
+}
+
+.nav .brand .brand-descriptor {
+  cursor: default;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.nav .division-inline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px solid #17181760;
+  min-width: 0;
+}
+
+.nav .division-inline a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0;
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.nav .division-inline a:hover {
+  color: var(--accent);
+}
+
+/* Keep the original desktop header height and move navigation right. */
+@media (min-width: 1101px) {
+  .nav .nav-inner > .navlinks {
+    margin-left: auto;
+    gap: 24px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .nav .nav-inner > .nav-cta {
+    margin-left: 24px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* Allow the header to wrap before its contents become crowded. */
+@media (max-width: 1100px) {
+  .nav .nav-inner {
+    height: auto;
+    min-height: 84px;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    row-gap: 12px;
+  }
+
+  .nav .brand-wrap {
+    flex: 0 0 100%;
+  }
+
+  .nav .nav-inner > .navlinks {
+    margin-left: auto;
+  }
+
+  .nav .nav-inner > .nav-cta {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .nav .divisions-menu {
+    max-height: calc(100dvh - 180px);
+  }
+}
+
+/* Keep every division visible and readable on narrow phones. */
+@media (max-width: 650px) {
+  .nav .brand-wrap {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .nav .brand-wrap > .brand {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .nav .brand-wrap .brand-descriptor {
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .nav .division-inline {
+    flex: 0 0 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 14px;
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 10px;
+    border-left: 0;
+    border-top: 1px solid #17181730;
+  }
+
+  .nav .division-inline a {
+    padding: 3px 0;
+    font-size: 12px;
+    line-height: 16px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .nav .divisions-menu {
+    max-height: calc(100dvh - 220px);
+  }
+}
