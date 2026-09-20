@@ -11,6 +11,14 @@ const stripLabel: Record<string, string> = {
   trading: 'Global Commodities',
 };
 
+const inlineDivisionLabels: Record<string, string[]> = {
+  technology: ['TECHNOLOGY'],
+  energy: ['ENERGY'],
+  'critical-minerals': ['CRITICAL', 'MINERALS'],
+  construction: ['CONSTRUCTION', '& INTERIORS'],
+  trading: ['GLOBAL', 'COMMODITIES'],
+};
+
 export default function SiteHeader({
   division,
   sub,
@@ -70,15 +78,16 @@ export default function SiteHeader({
             </small>
           </a>
 
-          <nav
-            className="division-inline"
-            aria-label="Switch division"
-          >
+          <nav className="division-inline" aria-label="Switch division">
             {divisions
               .filter(d => d.slug !== division)
               .map(d => (
                 <a key={d.slug} href={d.href}>
-                  {stripLabel[d.slug] ?? d.short}
+                  {(inlineDivisionLabels[d.slug] ?? [
+                    (stripLabel[d.slug] ?? d.short).toUpperCase(),
+                  ]).map((line, index) => (
+                    <span key={`${d.slug}-${index}`}>{line}</span>
+                  ))}
                 </a>
               ))}
           </nav>
