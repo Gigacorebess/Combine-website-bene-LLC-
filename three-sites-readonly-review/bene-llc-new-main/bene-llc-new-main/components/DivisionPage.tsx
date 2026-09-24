@@ -3,7 +3,13 @@ import SiteFooter from '@/components/SiteFooter';
 import DivisionHeroMedia from '@/components/DivisionHeroMedia';
 import { divisions, enquiry, type Division, type Subdivision } from '@/lib/divisions';
 
-const contactLinks = [{ href: '#contact', label: 'Contact' }];
+// The same header navigation on every page, so it does not change as you
+// move between divisions.
+const siteLinks = [
+  { href: '/#commodities', label: 'Commodities' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact Us' },
+];
 
 function SiteCards({ sites }: { sites: Subdivision['sites'] }) {
   if (!sites.length) return null;
@@ -43,7 +49,7 @@ export function DivisionOverview({ division }: { division: Division }) {
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <SiteHeader division={division.slug} links={contactLinks} cta={{ href: enquiry(division.email, division.short), label: 'Get in touch' }} />
+      <SiteHeader division={division.slug} links={siteLinks} cta={{ href: enquiry(division.email, division.short), label: 'Get in touch' }} />
       <main id="main">
         <section className="shell division-hero">
           <div className="division-hero-grid">
@@ -94,7 +100,7 @@ export function SubdivisionDetail({ division, sub }: { division: Division; sub: 
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <SiteHeader division={division.slug} sub={sub.slug} links={[{ href: division.href, label: division.short + ' overview' }, ...contactLinks]} cta={{ href: enquiry(division.email, sub.name), label: 'Get in touch' }} />
+      <SiteHeader division={division.slug} sub={sub.slug} links={siteLinks} cta={{ href: enquiry(division.email, sub.name), label: 'Get in touch' }} />
       <main id="main">
         <section className="shell division-hero">
           <nav className="breadcrumb eyebrow" aria-label="Breadcrumb"><a href="/">Bene LLC</a> / <a href={division.href}>{division.short}</a> / <span aria-current="page">{sub.name}</span></nav>
