@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const links = [
   { href: '/#commodities', label: 'Commodities' },
   { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 const SALES = 'sales@benellc.com';
