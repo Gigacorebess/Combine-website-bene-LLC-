@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { descriptorFor, divisions } from '@/lib/divisions';
+import { divisions } from '@/lib/divisions';
 import './SiteHeader.css';
 
 type Link = { href: string; label: string };
@@ -33,7 +33,6 @@ export default function SiteHeader({
   const [open, setOpen] = useState(false);
   const header = useRef<HTMLElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
-  const lines = descriptorFor(division, sub);
 
   useEffect(() => {
     if (!open) return;
@@ -67,29 +66,28 @@ export default function SiteHeader({
     >
       <div className="shell nav-inner">
         <div className="brand-wrap">
-          <a
-            className="brand"
-            href="/"
-            aria-label={'Bene LLC — ' + lines.join(' ').toLowerCase()}
-          >
+          <a className="brand" href="/" aria-label="Bene LLC — home">
             bene<span className="brand-dot" />
-            <small className="brand-descriptor">
-              {lines.map(l => <span key={l}>{l}</span>)}
-            </small>
           </a>
 
-          <nav className="division-inline" aria-label="Switch division">
-            {divisions
-              .filter(d => d.slug !== division)
-              .map(d => (
-                <a key={d.slug} href={d.href}>
-                  {(inlineDivisionLabels[d.slug] ?? [
-                    (stripLabel[d.slug] ?? d.short).toUpperCase(),
-                  ]).map((line, index) => (
-                    <span key={`${d.slug}-${index}`}>{line}</span>
-                  ))}
-                </a>
-              ))}
+          {/* Every division, always in the order set by lib/divisions.ts, so the
+              strip reads the same on every page. The current one is marked
+              rather than pulled out, which used to reorder the list per page. */}
+          <nav className="division-inline" aria-label="Divisions">
+            {divisions.map(d => (
+              <a
+                key={d.slug}
+                href={d.href}
+                className={d.slug === division ? 'is-current' : undefined}
+                aria-current={d.slug === division && !sub ? 'page' : undefined}
+              >
+                {(inlineDivisionLabels[d.slug] ?? [
+                  (stripLabel[d.slug] ?? d.short).toUpperCase(),
+                ]).map((line, index) => (
+                  <span key={`${d.slug}-${index}`}>{line}</span>
+                ))}
+              </a>
+            ))}
           </nav>
         </div>
 
