@@ -102,6 +102,15 @@
 
 /* Keep every division visible and readable on narrow phones. */
 @media (max-width: 650px) {
+  /* Give the nav its own full-width row starting at the shell's left edge, so
+     it lines up with the division strip above instead of hugging the right.
+     Overrides the margin-left:auto set for <=1100px. Phones only. */
+  .nav .nav-inner > .navlinks {
+    flex: 0 0 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
   .nav .brand-wrap {
     flex-wrap: wrap;
     row-gap: 10px;
@@ -118,6 +127,9 @@
     overflow-wrap: anywhere;
   }
 
+  /* All five divisions have to fit the width of a phone without scrolling, so
+     the spacing is tightened rather than the type shrunk further. overflow-x
+     stays as a safety net for very narrow devices, with the scrollbar hidden. */
   .nav .division-inline {
     flex: 0 0 100%;
     width: 100%;
@@ -127,17 +139,24 @@
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     margin: 0;
-    padding: 0 0 4px;
+    padding: 0;
     border: 0;
+  }
+
+  .nav .division-inline::-webkit-scrollbar {
+    display: none;
   }
 
   .nav .division-inline a {
     min-height: 0;
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     font-size: 8px;
-    margin-left: 10px;
-    padding: 6px 0 6px 10px;
+    letter-spacing: 0.2px;
+    margin-left: 5px;
+    padding: 6px 0 6px 5px;
   }
 
   .nav .division-inline a:first-child {
