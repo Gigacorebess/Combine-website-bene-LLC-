@@ -1,10 +1,26 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { divisions } from '@/lib/divisions';
+import { divisionContent } from '@/lib/division-content';
+import { divisions, findDivision } from '@/lib/divisions';
 import './SiteHeader.css';
 
 type Link = { href: string; label: string };
+
+// Context-aware navigation, defined once and used by desktop and mobile alike.
+// About and Contact stay inside whichever division the visitor is already in;
+// Trading is the root site, so its pages are /about and /contact, and every
+// other division has /<division>/about and /<division>/contact. The division
+// comes from the URL, so there is no state to reset and nothing to flash.
+export function contextLinks(division: string): Link[] {
+  const d = findDivision(division);
+  const base = d && divisionContent[d.slug] ? d.href : '';
+  return [
+    { href: '/#commodities', label: 'Commodities' },
+    { href: `${base}/about`, label: 'About' },
+    { href: `${base}/contact`, label: 'Contact Us' },
+  ];
+}
 
 const stripLabel: Record<string, string> = {
   construction: 'Construction & Interiors',
@@ -27,9 +43,11 @@ export default function SiteHeader({
 }: {
   division: string;
   sub?: string;
-  links: Link[];
+  /** Omit to use the division's own context-aware links. */
+  links?: Link[];
   cta: Link;
 }) {
+  const navLinks = links ?? contextLinks(division);
   const [open, setOpen] = useState(false);
   const header = useRef<HTMLElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
@@ -103,7 +121,7 @@ export default function SiteHeader({
             Divisions <span aria-hidden="true">{open ? '−' : '+'}</span>
           </button>
 
-          {links.map(l => (
+          {navLinks.map(l => (
             <a key={l.href} href={l.href}>
               {l.label}
             </a>
