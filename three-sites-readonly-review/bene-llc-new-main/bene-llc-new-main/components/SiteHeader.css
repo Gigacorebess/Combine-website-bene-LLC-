@@ -116,7 +116,10 @@
     row-gap: 10px;
   }
 
+  /* Centre the wordmark over the rest of the header on phones. */
   .nav .brand-wrap > .brand {
+    flex: 0 0 100%;
+    justify-content: center;
     max-width: 100%;
     min-width: 0;
   }
@@ -153,7 +156,12 @@
   .nav .division-inline a {
     min-height: 0;
     flex: 0 1 auto;
-    font-size: 8px;
+    /* As large as the width allows without bringing the scrollbar back.
+       Content grows ~26px per 1px of font-size, and the room available is
+       ~88% of the viewport, so the ceiling is ~8.6px at 320 and ~10.5px at
+       375. 2.6vw stays under that at every width, with 8px and 11px as the
+       floor and cap. */
+    font-size: clamp(8px, 2.6vw, 11px);
     letter-spacing: 0.2px;
     margin-left: 5px;
     padding: 6px 0 6px 5px;
