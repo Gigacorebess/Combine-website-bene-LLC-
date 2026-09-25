@@ -10,19 +10,13 @@ export const metadata: Metadata = {
     'Talk to the Bene LLC trading desk about commodity sourcing, supply chain services or partnership opportunities.',
 };
 
-const links = [
-  { href: '/#commodities', label: 'Commodities' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact Us' },
-];
-
 const SALES = 'sales@benellc.com';
 
 export default function ContactPage() {
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <SiteHeader division="trading" links={links} cta={{ href: `mailto:${SALES}`, label: 'Talk trade' }} />
+      <SiteHeader division="trading" cta={{ href: `mailto:${SALES}`, label: 'Talk trade' }} />
 
       <main id="main">
         <section className="page-hero">

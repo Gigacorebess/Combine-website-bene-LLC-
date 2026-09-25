@@ -10,12 +10,6 @@ export const metadata: Metadata = {
     'Bene LLC is a global trading company offering worldwide sourcing and integrated supply chain solutions across metals, minerals, energy and agricultural commodities.',
 };
 
-const links = [
-  { href: '/#commodities', label: 'Commodities' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact Us' },
-];
-
 const stats: [string, string][] = [
   ['10+', 'Offices and logistics facilities'],
   ['90+', 'Countries covered'],
@@ -41,7 +35,7 @@ export default function AboutPage() {
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <SiteHeader division="trading" links={links} cta={{ href: '/contact', label: 'Contact us' }} />
+      <SiteHeader division="trading" cta={{ href: '/contact', label: 'Contact us' }} />
 
       <main id="main">
         <section className="page-hero">
